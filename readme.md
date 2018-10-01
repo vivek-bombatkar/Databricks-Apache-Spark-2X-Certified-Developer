@@ -557,6 +557,7 @@ sdf = spark.createDataFrame(pd.read_csv("https://raw.githubusercontent.com/fivet
 ### Pandas in spark
 - Scalar Pandas UDFs are used for vectorizing scalar operations. 
 - They can be used with functions such as select and withColumn
+- toPandas() will convert the Spark DataFrame into a Pandas DataFrame, which is of course in memory.  
 ```python
 def multi_fun(a, b):
   return a * b
@@ -716,3 +717,29 @@ Aggregate function: returns the first value in a group.
 ```python
 df.select("abc").distinct()
 ```
+
+### add / remove cols
+```python
+sdf.withColumn("new_col",lit(1))
+
+sdf.drop("new_col)
+```
+
+### eqNullSafe
+-  include NULL values in the join  
+```python
+sdf_1.join(sdf_2,sdf_1.col_1.eqNullSafe(sdf_2.col_1))
+```
+
+### RDD , partition , tasks etc..
+> https://qubole.zendesk.com/hc/en-us/articles/217111026-Reference-Relationship-between-Partitions-Tasks-Cores
+
+- # of Spark RDD / Data Frame Partitions = Result of Partitioning Logic for Spark Function
+
+- For the first task this is driven by the number of files in the source:
+    # of Tasks required for Stage = # of Source Partitions
+
+- For the subsequent tasks this is driven by the number of partitions from the prior stages:
+    # of Tasks required for Stage = # of Spark RDD / Data Frame Partitions
+    
+    
