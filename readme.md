@@ -631,12 +631,24 @@ df.withColumn("col1",col_condn)
 ```
 
 ### JOIN 
-> http://www.learnbymarketing.com/1100/pyspark-joins-by-example/
+> http://www.learnbymarketing.com/1100/pyspark-joins-by-example/  
+> https://spark.apache.org/docs/2.3.0/api/python/pyspark.sql.html  
+> https://spark.apache.org/docs/2.3.0/api/python/_modules/pyspark/sql/dataframe.html#DataFrame.join  
 ```python
 df_res = df_one.join(df_two,df_one.col1 == df_two.col1,"left") 
 df_res = df_one.join(other=df_two,on=["col1"],how="left")
 df_res = df_one.alias("a").join(df_two.alias("b"),col("a.col1") == col("b.col1"),"left") 
 ```
+- (inner, outer, left_outer, right_outer, leftsemi)   
+- Join takes three parameters: DataFrame on the right side of the join, Which fields are being joined on, and what type of join 
+-  An ***inner join*** is the default join type used 
+- default ``inner``. Must be one of: ``inner``, ``cross``, ``outer``,
+            ``full``, ``full_outer``, ``left``, ``left_outer``, ``right``, ``right_outer``,
+            ``left_semi``, and ``left_anti``  
+- ‘leftsemi’ if you care only for the left columns and just want to pull in the records that match in both table A and table B, y  
+- 
+
+
 ### distinct()
 >https://stackoverflow.com/questions/30959955/how-does-distinct-function-work-in-spark
 - shuffle data accross partition 
