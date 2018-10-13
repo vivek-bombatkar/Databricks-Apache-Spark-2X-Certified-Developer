@@ -135,3 +135,27 @@ Supported : json, parquet, jdbc, orc, libsvm, csv, text
 13. akka node size limitation 128 
 
 14. crossJoin
+
+15. df.groupBy(window(df[0],"2 minuts","1 minuts"),df[0]).count()  
+        - every 2 min window, sliding every 1 min  
+16. lit("foo")
+
+17. coalesce(numPartitions) vs repartition()
+    - Returns a new DataFrame that has exactly numPartitions partitions.
+    - coalesce uses existing partitions to minimize the amount of data that's shuffled. 
+    - repartition creates new partitions and does a full shuffle.  
+    - coalesce results in partitions with different amounts of data (sometimes partitions that have much different sizes) 
+    - and repartition results in roughly equal sized partitions.
+    - Is coalesce or repartition faster?
+        - coalesce may run faster than repartition, 
+        - but unequal sized partitions are generally slower to work with than equal sized partitions. 
+        - You'll usually need to repartition datasets after filtering a large data set. 
+        - I've found repartition to be faster overall because Spark is built to work with equal sized partitions.
+
+18. catalyst : Accumalator
+
+19. JVM HEAP MEMORY
+
+20. broadcast join
+
+21. 
