@@ -1,6 +1,6 @@
 
 
-1. 
+1. RDD 
 ***Below are transformations***  
 map(func)    
 filter(func)  
@@ -22,6 +22,12 @@ pipe(command, [envVars])
 coalesce(numPartitions)  
 repartition(numPartitions)  
 repartitionAndSortWithinPartitions(partitioner)  
+***cache()  
+printSchema()
+select()
+limit()
+coalesce(numPartitions) 
+
 
 ***Below are Actions***  
 reduce(func)   
