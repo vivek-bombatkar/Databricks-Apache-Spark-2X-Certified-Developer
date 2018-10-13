@@ -1,11 +1,11 @@
 
 
 1. 
-***Below are transformations
-map(func)
-filter(func)
-flatMap(func)
-mapPartitions(func)
+***Below are transformations***  
+map(func)    
+filter(func)  
+flatMap(func)  
+mapPartitions(func)  
 mapPartitionsWithIndex(func)
 sample(withReplacement, fraction, seed)
 union(otherDataset)
