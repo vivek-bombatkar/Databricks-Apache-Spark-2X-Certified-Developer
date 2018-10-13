@@ -27,7 +27,8 @@ printSchema()
 select()
 limit()
 coalesce(numPartitions) 
-
+toDF()
+toRDD()
 
 ***Below are Actions***  
 reduce(func)   
@@ -122,3 +123,15 @@ for num in range(1, 101):
 Supported : json, parquet, jdbc, orc, libsvm, csv, text
 
 8. With cache(), you use only the default storage level MEMORY_ONLY
+
+9. partitions , shuffal partitons, default parallelism
+
+10. persist()
+
+11. Catalyst , tungstun
+
+12. memory bottleneck - groupByKey, reduceByKey, count, reuce Key Locally
+
+13. akka node size limitation 128 
+
+14. crossJoin
