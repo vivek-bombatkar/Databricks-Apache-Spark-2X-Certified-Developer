@@ -120,3 +120,5 @@ for num in range(1, 101):
 
 7. unsupported file format   
 Supported : json, parquet, jdbc, orc, libsvm, csv, text
+
+8. With cache(), you use only the default storage level MEMORY_ONLY
