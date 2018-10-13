@@ -1,0 +1,41 @@
+
+
+1. 
+***Below are transformations
+map(func)
+filter(func)
+flatMap(func)
+mapPartitions(func)
+mapPartitionsWithIndex(func)
+sample(withReplacement, fraction, seed)
+union(otherDataset)
+intersection(otherDataset)
+distinct([numPartitions]))
+groupByKey([numPartitions])
+reduceByKey(func, [numPartitions])
+aggregateByKey(zeroValue)(seqOp, combOp, [numPartitions])
+sortByKey([ascending], [numPartitions])
+join(otherDataset, [numPartitions])
+cogroup(otherDataset, [numPartitions])
+cartesian(otherDataset)
+pipe(command, [envVars])
+coalesce(numPartitions)
+repartition(numPartitions)
+repartitionAndSortWithinPartitions(partitioner)
+
+***Below are Actions
+reduce(func)
+collect()
+count()
+first()
+take(n)
+takeSample(withReplacement, num, [seed])
+takeOrdered(n, [ordering])
+saveAsTextFile(path)
+saveAsSequenceFile(path) 
+(Java and Scala)
+saveAsObjectFile(path) 
+(Java and Scala)
+countByKey()
+foreach(func)
+
