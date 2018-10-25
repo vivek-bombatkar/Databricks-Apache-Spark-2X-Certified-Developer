@@ -703,6 +703,16 @@ Aggregate on the entire DataFrame without groups (shorthand for df.groupBy.agg()
 ```python
 df.groupBy(df.col1).agg(a.max(df.col1))
 ```
+- get non groupby cols in df  
+```python
+
+pyspark.sql.functions import collect_set
+df.groupBy(df.col1).agg(a.collect_set(df.col2))
+
+col1  collect_set(col2)
+1     [2,3]
+5     [7,9]
+```
 
 ### pyspark.sql.types.ArrayType
 ```python
