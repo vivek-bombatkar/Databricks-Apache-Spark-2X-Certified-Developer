@@ -18,37 +18,39 @@ perp course:
 - no pen , paper. only notes sections  
 - practice exam available after registratin for real exam , sample 10 questions  
 
-30% Spark architecture  
+- 30% Spark architecture  
 	deployment mode  
 	caching persit, unpersist, storage level  
 	partitioning, read from source partition, repartition - coaleasce() vs repartition, # of shuffle partition  
 	performance, catalyst, bottleneck  
-40 sql df   
+
+- 40% sql df   
 	R W DF, reader class, writer class  
 	T va A, wide vs narrow  
 	*joins, types, broadcast, cross joins  
 	*UDF  
 	*window functions  
-10 rdd low level api  
+
+- 10% rdd low level api  
 	pair rdd, map, flat map,  
 	rdd - df conversion  
 	*accumulator , accumulator2   
 	wide transf, reduceByKey, groupByKey  
-10 streaming  
+- 10% streaming  
 	sources , sinks  
 	fault tolerance  
 	df manupalation  
 	watermark  
 	checkpoint  
-5 ml  
+- 5% ml  
 	ml pipeline, transform, estimators  
 	model selection, evaluator, parameter grids  
 	no specific algo logic needed  
-5 graph  
+- 5% graph  
 	creating graphFrame   
 	inDegrees, outDegrees, bfs, shortestPath, triangleCount   
 	
-*Key API  
+- Key API  
 	sparkSession  
 	*Dtataframe/DS  
 	*DFReader, DFWritter -  what source built in, csv json - schema needed, parquit schema inbuilt, comparision  
