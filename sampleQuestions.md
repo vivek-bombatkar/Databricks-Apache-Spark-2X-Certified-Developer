@@ -1,4 +1,4 @@
-Databricks - Apache Spark™ - 2X Certified Developer
+## Databricks - Apache Spark™ - 2X Certified Developer - sample questions
 
 perp course:  
 - half of the day,     
@@ -57,71 +57,39 @@ perp course:
 	*column ,row - manupalation,   
 	spark.sql.functions - *broadcast   
 	
-# test exam
+## test exam
 
-1.  wide transform
-
-1.	Which of the following DataFrame operations are wide transformations (that is, they result in a shuffle)?
+- 1.	Which of the following DataFrame operations are wide transformations (that is, they result in a shuffle)?  
  	
-A.		cache()
-B.		distinct()
-C.		drop()
-D.		repartition()
-E.		filter()
-F.		orderBy()
-	Mark this item for later review.
+*A.		repartition()  
+B.		filter()  
+*C.		orderBy()  
+*D.		distinct()  
+E.		drop()  
+F.		cache()  
 
-2 accumulator- 1
-- accumulator not shown in ui
-- 	
-	
-3. array() : 3 | 7006 
 
-4. csv : used schema provided, ignore header
-
-5. broadcast : threshold need to set, otherwise it will not dont
-
-6. name dept, score : 
-
-7. stream : kafka , file
-
-8. cache : *default : MEMORY_DISK, decrease performance
-	 
-	 
-#############
-
-1.	Which of the following DataFrame operations are wide transformations (that is, they result in a shuffle)?
+- 2.	Which of the following methods are NOT a DataFrame action?  
  	
-*A.		repartition()
-B.		filter()
-*C.		orderBy()
-*D.		distinct()
-E.		drop()
-F.		cache()
+*A.		limit()  
+B.		foreach()  
+C.		first()  
+*D.		printSchema()  
+E.		show()  
+*F.		cache()  
 
 
-2.	Which of the following methods are NOT a DataFrame action?
+- 3.	Which of the following statements about Spark accumulator variables is NOT true?  
  	
-*A.		limit()
-B.		foreach()
-C.		first()
-*D.		printSchema()
-E.		show()
-*F.		cache()
+*A.		For accumulator updates performed inside actions only, Spark guarantees that each task’s update to the accumulator will be applied only once, meaning that restarted tasks will not update the value. In transformations, each task’s update can be applied more than once if tasks or job stages are re-executed.  
+B.		Accumulators provide a shared, mutable variable that a Spark cluster can safely update on a per-row basis.  
+C.		You can define your own custom accumulator class by extending org.apache.spark.util.AccumulatorV2 in Java or Scala or pyspark.AccumulatorParam in Python.   
+D.		The Spark UI displays all accumulators used by your application.  
 
 
-3.	Which of the following statements about Spark accumulator variables is NOT true?
- 	
-*A.		For accumulator updates performed inside actions only, Spark guarantees that each task’s update to the accumulator will be applied only once, meaning that restarted tasks will not update the value. In transformations, each task’s update can be applied more than once if tasks or job stages are re-executed.
-B.		Accumulators provide a shared, mutable variable that a Spark cluster can safely update on a per-row basis.
-C.		You can define your own custom accumulator class by extending org.apache.spark.util.AccumulatorV2 in Java or Scala or pyspark.AccumulatorParam in Python.
-D.		The Spark UI displays all accumulators used by your application.
-
-
-4.	
- Given an instance of SparkSession named spark, review the following code:
+- 4.	 Given an instance of SparkSession named spark, review the following code:  
  
-
+```python
 import org.apache.spark.sql.functions._
 
 val a = Array(1002, 3001, 4002, 2003, 2002, 3004, 1003, 4006)
@@ -138,10 +106,11 @@ val c = b
   .orderBy(col("count").desc, col("total"))
   .limit(1)
   .show()
+```
 
 Which of the following results is correct?
 
- 	
+```python 	
 *A.		
 +-----+-----+
 |count|total|
@@ -168,10 +137,9 @@ D.
 +-----+-----+
 |    8|20023|
 +-----+-----+
- 
+ ```
 
-5.	
-Given an instance of SparkSession named spark, which one of the following code fragments executemost quickly and produce a DataFrame with the specified schema? Assume a variable named schema with the correctly structured StructType to represent the DataFrame's schema has already been initialized.
+- 5. Given an instance of SparkSession named spark, which one of the following code fragments executemost quickly and produce a DataFrame with the specified schema? Assume a variable named schema with the correctly structured StructType to represent the DataFrame's schema has already been initialized.
 
 Sample data:
  
@@ -181,7 +149,7 @@ id,firstName,lastName,birthDate,email,country,phoneNumber
 
 Schema:
  
-
+```python
 id: integer
 firstName: string
 lastName: string
@@ -210,11 +178,11 @@ val df = spark.read
    .schema(schema)
    .option("header", "true")
    .csv("/data/people.csv")
+```
 
-6.	
-Consider the following DataFrame:
+- 6. Consider the following DataFrame:
  
-
+```python
 val rawData = Seq(
   (1, 1000, "Apple", 0.76),
   (2, 1000, "Apple", 0.11),
@@ -262,22 +230,22 @@ dfA.groupBy("UserKey")
   .toDF("UserKey", "Collection")
   .show(20, false)
 
-7.	
-tableA is a DataFrame consisting of 20 fields and 40 billion rows of data with a surrogate key field. tableB is a DataFrame functioning as a lookup table for the surrogate key consisting of 2 fields and 5,000 rows. If the in-memory size of tableB is 22MB, what occurs when the following code is executed:
- 
+```
 
+- 7. tableA is a DataFrame consisting of 20 fields and 40 billion rows of data with a surrogate key field. tableB is a DataFrame functioning as a lookup table for the surrogate key consisting of 2 fields and 5,000 rows. If the in-memory size of tableB is 22MB, what occurs when the following code is executed:
+ 
+```python
 val df = tableA.join(broadcast(tableB), Seq("primary_key"))
- 	
-A.		The broadcast function is non-deterministic, thus a BroadcastHashJoin is likely to occur, but isn't guaranteed to occur.
-*B.		A normal hash join will be executed with a shuffle phase since the broadcast table is greater than the 10MB default threshold and the broadcast command can be overridden silently by the Catalyst optimizer.
-C.		The contents of tableB will be replicated and sent to each executor to eliminate the need for a shuffle stage during the join.
-D.		An exception will be thrown due to tableB being greater than the 10MB default threshold for a broadcast join.
+``` 	
+A.		The broadcast function is non-deterministic, thus a BroadcastHashJoin is likely to occur, but isn't guaranteed to occur.  
+*B.		A normal hash join will be executed with a shuffle phase since the broadcast table is greater than the 10MB default threshold and the broadcast command can be overridden silently by the Catalyst optimizer.  
+C.		The contents of tableB will be replicated and sent to each executor to eliminate the need for a shuffle stage during the join.  
+D.		An exception will be thrown due to tableB being greater than the 10MB default threshold for a broadcast join.  
 
 
-8.	
-Consider the following DataFrame:
+- 8. Consider the following DataFrame:  
  
-
+```python
 import org.apache.spark.sql.functions._
 
 val people = Seq(
@@ -290,10 +258,11 @@ val people = Seq(
     ("Gatimu", 3, Seq(300, 100))
   )
   .toDF("name", "department", "score")
+```
 
 Select the code fragment that produces the following result:
  
-
+```python
 +----------+-------+-------+
 |department|   name|highest|
 +----------+-------+-------+
@@ -349,29 +318,27 @@ people
   .withColumnRenamed("max(score)", "highest")
   .orderBy("department")
   .show()
-   
+```   
 	 
 	 
-9.	Which of the following standard Structured Streaming sink types are idempotent and can provide end-to-end exactly-once semantics in a Structured Streaming job?
+- 9.	Which of the following standard Structured Streaming sink types are idempotent and can provide end-to-end exactly-once semantics in a Structured Streaming job?  
  	
-A.		Console
-*B.		Kafka
-C.		File
-D.		Memory
+A.		Console  
+*B.		Kafka  
+C.		File  
+D.		Memory  
 
 
-10.	
-Which of following statements regarding caching are TRUE?
-
+- 10. Which of following statements regarding caching are TRUE?  
  	
-*A.		The default storage level for a DataFrame is StorageLevel.MEMORY_AND_DISK.
-*B.		The uncache() method evicts a DataFrame from cache.
-C.		The persist() method immediately loads data from its source to materialize the DataFrame in cache.
-D.		Explicit caching can decrease application performance by interfering with the Catalyst optimizer's ability to optimize some queries.
+*A.		The default storage level for a DataFrame is StorageLevel.MEMORY_AND_DISK.  
+*B.		The uncache() method evicts a DataFrame from cache.  
+C.		The persist() method immediately loads data from its source to materialize the DataFrame in cache.  
+D.		Explicit caching can decrease application performance by interfering with the Catalyst optimizer's ability to optimize some queries.  
 
 
-Score:	80%
-Result:	Pass
+Score:	80%  
+Result:	Pass  
 
 
 ## more practice question
