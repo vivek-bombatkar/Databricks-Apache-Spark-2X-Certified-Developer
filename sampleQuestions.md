@@ -1,59 +1,59 @@
 Databricks - Apache Spark™ - 2X Certified Developer
 
-perp course:
-- half of the day, 
-- good understanding of the exam pattern
-- benefits of certification
-- dos /donts
-- exam material
-- ml / graph - not specific , high level idea, api concept, ex ml pipeline into api,
-- key api understanding
-- cant leave the deak
-- 3 hrs
-- passing 65%, 40 questions
-- free retake , if fail
-- py & scala 2 seperate exam selections.
-- dont stress py / scala, but tuples-rdd, etc
-- graph , ml , stream - only one Q for each
-- no pen , paper. only notes sections
-- practice exam available after registratin for real exam , sample 10 questions
+perp course:  
+- half of the day,     
+- good understanding of the exam pattern  
+- benefits of certification  
+- dos /donts   
+- exam material  
+- ml / graph - not specific , high level idea, api concept, ex ml pipeline into api,  
+- key api understanding  
+- cant leave the deak  
+- 3 hrs  
+- passing 65%, 40 questions  
+- free retake , if fail  
+- py & scala 2 seperate exam selections.  
+- dont stress py / scala, but tuples-rdd, etc  
+- graph , ml , stream - only one Q for each  
+- no pen , paper. only notes sections  
+- practice exam available after registratin for real exam , sample 10 questions  
 
-30 arch
-	deployment mode
-	caching persit, unpersist, storage level
-	partitioning, read from source partition, repartition - coaleasce() vs repartition, # of shuffle partition
-	performance, catalyst, bottleneck
-40 sql df 
-	R W DF, reader class, writer class
-	T va A, wide vs narrow
-	*joins, types, broadcast, cross joins
-	*UDF
-	*window functions
-10 rdd low level api
-	pair rdd, map, flat map,
-	rdd - df conversion
-	*accumulator , accumulator2 
-	wide transf, reduceByKey, groupByKey
-10 **streaming
-	sources , sinks
-	fault tolerance
-	df manupalation
-	watermark
-	checkpoint
-5 **ml
-	*ml pipeline, transform, estimators
-	model selection, evaluator, parameter grids
-	no specific algo logic needed
-5 graph
-	creating graphFrame
-	inDegrees, outDegrees, bfs, shortestPath, triangleCount
+30% Spark architecture  
+	deployment mode  
+	caching persit, unpersist, storage level  
+	partitioning, read from source partition, repartition - coaleasce() vs repartition, # of shuffle partition  
+	performance, catalyst, bottleneck  
+40 sql df   
+	R W DF, reader class, writer class  
+	T va A, wide vs narrow  
+	*joins, types, broadcast, cross joins  
+	*UDF  
+	*window functions  
+10 rdd low level api  
+	pair rdd, map, flat map,  
+	rdd - df conversion  
+	*accumulator , accumulator2   
+	wide transf, reduceByKey, groupByKey  
+10 streaming  
+	sources , sinks  
+	fault tolerance  
+	df manupalation  
+	watermark  
+	checkpoint  
+5 ml  
+	ml pipeline, transform, estimators  
+	model selection, evaluator, parameter grids  
+	no specific algo logic needed  
+5 graph  
+	creating graphFrame   
+	inDegrees, outDegrees, bfs, shortestPath, triangleCount   
 	
-*Key API
-	sparkSession
-	*Dtataframe/DS
-	*DFReader, DFWritter -  what source built in, csv json - schema needed, parquit schema inbuilt, comparision
-	*column ,row - manupalation, 
-	spark.sql.functions - *broadcast 
+*Key API  
+	sparkSession  
+	*Dtataframe/DS  
+	*DFReader, DFWritter -  what source built in, csv json - schema needed, parquit schema inbuilt, comparision  
+	*column ,row - manupalation,   
+	spark.sql.functions - *broadcast   
 	
 # test exam
 
