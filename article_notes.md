@@ -21,7 +21,7 @@ The Scala and Python exams are functionally identical
     - 70% of the questions are based on codeing examples   
     - Have some practice of writing code by hand to 
     - use as many rough paper you can in exam,
-    - I have done rough work for every single questions, that take me almost 5 papers both sides!
+    - I have done rough work for every single questions, that made me take 5 papers both sides!
 
     Format of the exam.
     Select one item that is true or false.  
@@ -29,10 +29,11 @@ The Scala and Python exams are functionally identical
     Given a code fragment, identify the result(s) it produces or identify errors it contains.  
     Given a desired goal, select the code fragment that produces those results or  select the design or implementation that minimizes runtime issues or performance bottlenecks.  
 
-- t3 ???      
+- t3       
 
 - t4 time management,
-    - Time limit is 3 hours - take your time!
+    - Time limit is 3 hours - take your time! Not realy...
+    - time flies in 
     - skip the long time consuming questions...
     - You can marke such questions for later reviw (option box)
     - 
