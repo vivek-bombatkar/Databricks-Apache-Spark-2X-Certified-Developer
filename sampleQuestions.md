@@ -81,10 +81,14 @@ E.		show()
 
 - 3.	Which of the following statements about Spark accumulator variables is NOT true?  
  	
-*A.		For accumulator updates performed inside actions only, Spark guarantees that each task’s update to the accumulator will be applied only once, meaning that restarted tasks will not update the value. In transformations, each task’s update can be applied more than once if tasks or job stages are re-executed.  
+A.		For accumulator updates performed inside actions only, Spark guarantees that each task’s update to the accumulator will be applied only once, meaning that restarted tasks will not update the value. In transformations, each task’s update can be applied more than once if tasks or job stages are re-executed.  
 B.		Accumulators provide a shared, mutable variable that a Spark cluster can safely update on a per-row basis.  
 C.		You can define your own custom accumulator class by extending org.apache.spark.util.AccumulatorV2 in Java or Scala or pyspark.AccumulatorParam in Python.   
-D.		The Spark UI displays all accumulators used by your application.  
+*D.		The Spark UI displays all accumulators used by your application.  
+
+Ref: D is FALSE, as spark ui only displays named accumulators.  
+> https://jaceklaskowski.gitbooks.io/mastering-apache-spark/spark-accumulators.html  
+> https://www.edureka.co/blog/spark-accumulators-explained  
 
 
 - 4.	 Given an instance of SparkSession named spark, review the following code:  
