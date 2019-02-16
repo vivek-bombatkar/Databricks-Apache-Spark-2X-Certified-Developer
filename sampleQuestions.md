@@ -242,10 +242,14 @@ dfA.groupBy("UserKey")
 val df = tableA.join(broadcast(tableB), Seq("primary_key"))
 ``` 	
 A.		The broadcast function is non-deterministic, thus a BroadcastHashJoin is likely to occur, but isn't guaranteed to occur.  
-*B.		A normal hash join will be executed with a shuffle phase since the broadcast table is greater than the 10MB default threshold and the broadcast command can be overridden silently by the Catalyst optimizer.  
-C.		The contents of tableB will be replicated and sent to each executor to eliminate the need for a shuffle stage during the join.  
+B.		A normal hash join will be executed with a shuffle phase since the broadcast table is greater than the 10MB default threshold and the broadcast command can be overridden silently by the Catalyst optimizer.  
+*C.		The contents of tableB will be replicated and sent to each executor to eliminate the need for a shuffle stage during the join.  
 D.		An exception will be thrown due to tableB being greater than the 10MB default threshold for a broadcast join.  
 
+Ref: C is a correct answer, as broadcast standard function is used for broadcast joins (aka map-side joins), i.e. to hint the Spark planner to broadcast a dataset regardless of the size.  
+> https://jaceklaskowski.gitbooks.io/mastering-spark-sql/spark-sql-hint-framework.html#broadcast-hints
+> https://jaceklaskowski.gitbooks.io/mastering-apache-spark/spark-broadcast.html
+> https://www.cloudera.com/documentation/enterprise/5-8-x/topics/admin_spark_tuning.html
 
 - 8. Consider the following DataFrame:  
  
