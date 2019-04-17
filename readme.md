@@ -214,8 +214,12 @@ rdd5.collect() #actions - stage 3
    - Locality Level : PROCESS_LOCAL, NODE_LOCAL, RACK_LOCAL, or ANY  
  
  ![data locality](https://github.com/vivek-bombatkar/MyLearningNotes/raw/master/spark/pics/data_locality.JPG)
- 
+
+### Kryo serialization   
+
+> https://spark.apache.org/docs/latest/tuning.html#data-serialization  
 - ***For most programs, switching to Kryo serialization and persisting data in serialized form will solve most common performance issues
+
 
 > a.11 Job Scheduling  
 - http://spark.apache.org/docs/latest/job-scheduling.html#scheduling-within-an-application  
