@@ -34,6 +34,10 @@ Please comment if you have any suggestion, find a correction or want to apprecia
 - [databricks - free 6GB cluster with preinstall spark and relavent dependencies for notebooks ](https://community.cloud.databricks.com/)  
 - [zepl - limited resource spark non distributed notebooks  ](https://www.zepl.com/)  
 - [colab - from google](https://colab.research.google.com/)    
+- [Kaggle Kernals (Kaggle kernal > Internet On ; ! Pip install pyspark)](https://www.kaggle.com/kernels)   
+
+
+
 ```
 # spark on colab
 !apt-get install openjdk-8-jdk-headless -qq > /dev/null
