@@ -165,6 +165,8 @@ rdd5.collect() #actions - stage 3
   - ```spark.memory.storageFraction```  
   
 - ***How Determining Memory Consumption***  
+> https://github.com/vivek-bombatkar/spark-training/tree/master/spark-python/jupyter-advanced-caching  
+
   - create an RDD, put it into cache, and look at the “Storage” page in the web UI  
   - SizeEstimator’s estimate - consumption of a particular object  
   - With cache(), you use only the default storage level MEMORY_ONLY. With persist(), you can specify which storage level you want.
@@ -433,7 +435,11 @@ Below tabs from spark UI
 -  dynamic allocation  
 
 ### The Anatomy of a Spark Job  
+> https://github.com/vivek-bombatkar/spark-training/tree/master/spark-python/jupyter-advanced-execution   
+
 > spark application -> jobs -> stages -> tasks  
+
+
 - ***jobs*** 
   - highest element of Spark’s execution hierarchy. 
   - Each Spark job corresponds to one action
@@ -562,7 +568,8 @@ import pandas as pd
 sdf = spark.createDataFrame(pd.read_csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/airline-safety/airline-safety.csv"))
 ```
  
-### Pandas in spark
+### Pandas in spark  
+> https://github.com/vivek-bombatkar/spark-training/tree/master/spark-python/jupyter-advanced-udf   
 - Scalar Pandas UDFs are used for vectorizing scalar operations. 
 - They can be used with functions such as select and withColumn
 - toPandas() will convert the Spark DataFrame into a Pandas DataFrame, which is of course in memory.  
@@ -678,6 +685,7 @@ df.checkpoint
 
 ### pyspark.sql.window
 > https://databricks.com/blog/2015/07/15/introducing-window-functions-in-spark-sql.html  
+> Example: https://github.com/vivek-bombatkar/spark-training/tree/master/spark-python/jupyter-advanced-windows  
 ```python
 window_condn = window \
                .partitionby(df.col_date) \               
@@ -690,6 +698,8 @@ df_new = df.withColumn('col1',f.sum('col2')).over(window_condn)
 
 ### df.pivote
 > https://databricks.com/blog/2016/02/09/reshaping-data-with-pivot-in-apache-spark.html  
+> Example: https://github.com/vivek-bombatkar/spark-training/tree/master/spark-python/jupyter-advanced-pivoting  
+
 - Pivots a column of the current DataFrame and perform the specified aggregation. 
 - There are two versions of pivot function: one that requires the caller to specify the list of distinct values to pivot on, and one that does not. 
 - The latter is more concise but less efficient, because Spark needs to first compute the list of distinct values internally.
