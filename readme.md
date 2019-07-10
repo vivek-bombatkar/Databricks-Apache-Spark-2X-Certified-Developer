@@ -37,9 +37,9 @@ Please comment if you have any suggestion, find a correction or want to apprecia
 - [Kaggle Kernals (Kaggle kernal > Internet On ; ! Pip install pyspark)](https://www.kaggle.com/kernels)   
 
 
+### spark on Google colab
 
 ```
-# spark on colab
 !apt-get install openjdk-8-jdk-headless -qq > /dev/null
 !wget -q http://apache.osuosl.org/spark/spark-2.3.1/spark-2.3.1-bin-hadoop2.7.tgz # latest spark binary
 
@@ -57,6 +57,14 @@ spark = SparkSession.builder.master("local[*]").getOrCreate()
 
 ```
 
+### ### spark on Kaggle Kernals
+```
+!pip install pyspark
+
+from pyspark.sql import SparkSession
+spark = SparkSession.builder.master("local[*]").getOrCreate()
+spark
+```
 
 > [Spark code comments from Git](https://github.com/apache/spark)  
 > https://github.com/vivek-bombatkar/Spark-with-Python---My-learning-notes-  
