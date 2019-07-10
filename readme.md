@@ -57,7 +57,7 @@ spark = SparkSession.builder.master("local[*]").getOrCreate()
 
 ```
 
-### ### spark on Kaggle Kernals
+### spark on Kaggle Kernals
 ```
 !pip install pyspark
 
