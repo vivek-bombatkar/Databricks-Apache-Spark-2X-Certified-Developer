@@ -5,7 +5,7 @@
 This repo is collection of my notes for certification preparation.
 Please comment if you have any suggestion, find a correction or want to appreciate :-)  
 
-> Follow me on,  [LinkedIn](https://www.linkedin.com/in/vivek-bombatkar/), [Github](https://github.com/vivek-bombatkar)  
+> Follow me on,  [LinkedIn](https://www.linkedin.com/in/vivek-bombatkar/), [Github](https://github.com/vivek-bombatkar), [Kaggle](https://www.kaggle.com/competitions) 
 
 
 ## Index  
